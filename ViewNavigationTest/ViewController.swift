@@ -15,6 +15,17 @@ class ViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
 
-
+    @IBAction func didTouchPresentVC(_ sender: UIButton) {
+        let newVC = self.storyboard?.instantiateViewController(withIdentifier: "ModalViewController")
+        newVC?.modalTransitionStyle = .coverVertical
+        self.present(newVC!, animated: true, completion: nil)
+    }
+    
+    @IBAction func didTouchPushVC(_ sender: UIButton) {
+        let pushVC = self.storyboard?.instantiateViewController(withIdentifier: "PushViewController")
+        
+        self.navigationController?.pushViewController(pushVC!, animated: true)
+    }
+    
 }
 
